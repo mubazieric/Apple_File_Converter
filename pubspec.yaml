@@ -1,0 +1,72 @@
+name: apple_file_converter
+description: "Apple File Converter by Iwat Digital — an offline gallery, image converter and video converter for Apple formats and everyday media."
+publish_to: 'none'
+
+# version + build number. `flutter build --build-name/--build-number` can override these.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^2.0.0
+
+  # --- State / architecture ------------------------------------------------
+  provider: ^6.1.5
+
+  # --- Gallery access ------------------------------------------------------
+  photo_manager: ^3.12.0
+  photo_manager_image_provider: ^2.2.0
+
+  # --- Media processing ----------------------------------------------------
+  # Pure-Dart image codecs: identical behaviour on Android and iOS, unit-testable.
+  image: ^4.12.0
+  # Maintained FFmpeg distribution. `_full` is the LGPL variant without GPL codecs
+  # (no x264/x265); H.264/HEVC encoding uses MediaCodec / VideoToolbox.
+  ffmpeg_kit_flutter_new_full: ^2.5.7
+
+  # --- Persistence / platform ---------------------------------------------
+  shared_preferences: ^2.5.6
+  sqflite: ^2.4.4+1
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  device_info_plus: ^13.3.0
+  package_info_plus: ^10.2.2
+  permission_handler: ^13.0.2
+
+  # --- UI / media surface --------------------------------------------------
+  video_player: ^2.14.1
+  photo_view: ^0.15.0
+
+  # --- Files / sharing -----------------------------------------------------
+  file_picker: ^13.1.0
+  image_picker: ^1.2.4
+  share_plus: ^13.3.1
+  open_filex: ^4.7.0
+  url_launcher: ^6.3.3
+
+  # --- Utilities -----------------------------------------------------------
+  archive: ^4.5.2
+  crypto: ^3.0.7
+  intl: ^0.20.3
+
+  # --- Monetisation (optional; disabled in debug/tests) --------------------
+  google_mobile_ads: ^9.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  mocktail: ^1.0.5
+
+flutter:
+  uses-material-design: true
+  generate: true
+  # Assets are intentionally minimal; the app operates on user media and generated icons.

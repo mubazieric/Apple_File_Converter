@@ -1,0 +1,24 @@
+Apple File Converter — End User Licence
+
+Copyright (c) 2026 Iwat Digital. All rights reserved.
+
+This repository contains proprietary source code developed by Iwat Digital for the
+"Apple File Converter" mobile application.
+
+Permission is hereby granted to the authorised maintainers of the
+https://github.com/mubazieric/Apple_File_Converter repository to view, build and modify this
+source code for the purpose of developing and releasing the Apple File Converter application.
+
+Redistribution, sublicensing or use of this source code, in whole or in part, to produce a
+competing product, or for any purpose other than building and distributing the Apple File
+Converter application, is prohibited without the prior written permission of Iwat Digital.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+--------------------------------------------------------------------------------------------
+This application bundles third-party open-source software. Those components remain under their
+own licences; see THIRD_PARTY_NOTICES.md and docs/legal/LICENCE_REGISTER.md.
