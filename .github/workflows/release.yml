@@ -112,8 +112,6 @@ jobs:
       - name: Use CocoaPods instead of Flutter Swift Package Manager
         run: flutter config --no-enable-swift-package-manager
       - run: flutter pub get
-      - name: Install CocoaPods deps
-        run: pod install --project-directory=ios
       - name: Import signing certificate
         env:
           CERT_P12: ${{ secrets.IOS_DISTRIBUTION_CERT_P12 }}
@@ -144,7 +142,7 @@ jobs:
       - name: Build IPA
         run: >
           flutter build ipa --release
-          --export-options-plist=ios/ExportOptions.plist
+          --export-method=app-store
           --dart-define=ENABLE_ADS=${{ secrets.ADMOB_IOS_BANNER_ID != '' }}
           --dart-define=ADMOB_IOS_BANNER=${{ secrets.ADMOB_IOS_BANNER_ID }}
           --dart-define=ADMOB_IOS_NATIVE=${{ secrets.ADMOB_IOS_NATIVE_ID }}

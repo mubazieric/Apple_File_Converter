@@ -46,7 +46,8 @@ import VideoToolbox
       case "saveToPhotoLibrary":
         self.saveToPhotoLibrary(call, result)
       case "hasHardwareEncoder":
-        result(self.hasHardwareEncoder(call.argument("codec") as? String))
+        let arguments = call.arguments as? [String: Any]
+        result(self.hasHardwareEncoder(arguments?["codec"] as? String))
       case "deviceStorage":
         result(self.deviceStorage())
       default:
@@ -227,9 +228,12 @@ import VideoToolbox
     case "prores": codecType = kCMVideoCodecType_AppleProRes422
     default: return false
     }
-    let specification: [CFString: Any] = [
-      kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder: true
-    ]
+    // The "prefer hardware encoder" hint key only exists in the iOS 17.4+ SDK.
+    // On older systems VideoToolbox still selects hardware when available.
+    var specification: [CFString: Any] = [:]
+    if #available(iOS 17.4, *) {
+      specification[kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder] = true
+    }
     var session: VTCompressionSession?
     let status = VTCompressionSessionCreate(
       allocator: kCFAllocatorDefault,
