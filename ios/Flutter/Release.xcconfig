@@ -1,1 +1,7 @@
 #include "Generated.xcconfig"
+// google_mobile_ads 9.1.0 imports GoogleMobileAds_Beta.h, a header that is not
+// part of any module. clang rejects such includes when the Runner target
+// precompiles the plugin module, so the setting must live on the Runner target
+// (these xcconfig files) rather than on the Pods targets. Remove once the
+// plugin or the Google Mobile Ads SDK ships a fix.
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES=YES
