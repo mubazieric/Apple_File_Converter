@@ -4,8 +4,9 @@
 <dict>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
-	<!-- Placeholder Google TEST AdMob app id. Production campaigns use --dart-define at build
-	     time and must be replaced here (or via a build-script plist edit) before release. -->
+	<!-- Placeholder Google TEST AdMob app id. Production campaigns use the
+	     dart-define build flag and must be replaced here (or via a build-script
+	     plist edit) before release. -->
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>CFBundleDevelopmentRegion</key>

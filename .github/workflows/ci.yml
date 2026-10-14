@@ -86,10 +86,18 @@ jobs:
 
   build-ios:
     name: Build iOS (no codesign)
-    runs-on: macos-14
+    runs-on: macos-15
     needs: analyze
     steps:
       - uses: actions/checkout@v4
+      # device_info_plus calls NSProcessInfo.isiOSAppOnVision, which only exists
+      # in the Xcode 26.1+ SDK. macOS-14 images ship Xcode 16 and fail to compile.
+      - name: Select newest available Xcode
+        run: |
+          newest=$(ls -d /Applications/Xcode*.app 2>/dev/null | grep -E 'Xcode_[0-9]' | sort -V | tail -n 1)
+          echo "Selecting $newest"
+          sudo xcode-select -s "$newest"
+          xcodebuild -version
       - uses: subosito/flutter-action@v2
         with:
           channel: ${{ env.FLUTTER_CHANNEL }}

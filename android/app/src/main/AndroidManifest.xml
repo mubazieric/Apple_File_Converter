@@ -16,8 +16,9 @@
         android:label="apple_file_converter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <!-- Placeholder Google TEST AdMob app id. Production campaigns pass real ids with
-             --dart-define at build time; replace this value before a production release. -->
+        <!-- Placeholder Google TEST AdMob app id. Production campaigns pass real ids
+             with the dart-define build flag; replace this value before a
+             production release. -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
