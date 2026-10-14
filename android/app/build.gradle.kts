@@ -6,7 +6,10 @@ plugins {
 
 android {
     namespace = "com.iwatdigital.apple_file_converter"
-    compileSdk = flutter.compileSdkVersion
+    // permission_handler_android (pulled in by permission_handler) publishes AAR
+    // metadata that requires compiling against Android SDK 37, while Flutter's
+    // default is 36. Compile against whichever is higher.
+    compileSdk = maxOf(flutter.compileSdkVersion, 37)
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
